@@ -14,6 +14,14 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::middleware('auth:api')->get('/user', function (Request $request) {
-    return $request->user();
+Route::middleware('api')->get('/user', function (Request $request) {
+    return 'Hello user muser';
+});
+
+//Route::middleware('api', 'throttle:60,1')->group(function () {
+//    Route::post('/bet', 'BetController@store');
+//});
+
+Route::middleware('api')->group(function () {
+    Route::post('/bet', 'BetController@store');
 });
