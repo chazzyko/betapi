@@ -4,7 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Player;
 use App\Rules\Balance;
-use App\Rules\DuplicateSelection;
+use App\Rules\DuplicateSelections;
 use App\Rules\MaxOdds;
 use App\Rules\MaxSelections;
 use App\Rules\MaxStake;
@@ -25,7 +25,8 @@ class BetController extends BaseController
             $rez = $validator->make($request->all(), [
                'player_id' => [new Balance],
                'stake_amount' => [new MinStake, new MaxStake],
-               'selections' => [new MinSelections, new MaxSelections, new DuplicateSelection],
+               'selections' => [new MinSelections, new MaxSelections],
+                'id' => [new DuplicateSelections],
                'odds' => [new MinOdds, new MaxOdds ],
             ]);
 

@@ -7,6 +7,7 @@ use Illuminate\Contracts\Validation\Rule;
 class MaxOdds implements Rule
 {
     const MAX = 10000;
+    const CODE = 7;
     /**
      * Create a new rule instance.
      *
@@ -26,7 +27,7 @@ class MaxOdds implements Rule
      */
     public function passes($attribute, $value)
     {
-        return $value <= self::MAX;
+        return (float)$value <= self::MAX;
     }
 
     /**
@@ -34,8 +35,20 @@ class MaxOdds implements Rule
      *
      * @return string
      */
-    public function message()
+    public function message($parentArray = [])
     {
-        return ['code' => 12, 'message' => 'Maximum odds are ' . self::MAX];
+        $errors = [];
+
+        if(isset($parentArray['id'])){
+            $errors['id'] = $parentArray['id'];
+        }
+
+        $errors['errors'] = [
+            'code' => self::CODE,
+            'message' => 'Minimum odds are ' . self::MAX,
+        ];
+
+
+        return $errors;
     }
 }

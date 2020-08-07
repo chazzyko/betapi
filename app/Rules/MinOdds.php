@@ -7,6 +7,7 @@ use Illuminate\Contracts\Validation\Rule;
 class MinOdds implements Rule
 {
     const MIN = 1;
+    const CODE = 6;
     /**
      * Create a new rule instance.
      *
@@ -34,8 +35,19 @@ class MinOdds implements Rule
      *
      * @return string
      */
-    public function message()
+    public function message($parentArray = [])
     {
-        return ['code' => 11, 'message' => 'Minimum odds are ' . self::MIN];
+        $errors = [];
+
+        if(isset($parentArray['id'])){
+            $errors['id'] = $parentArray['id'];
+        }
+
+        $errors['errors'] = [
+            'code' => self::CODE,
+            'message' => 'Minimum odds are ' . self::MIN,
+        ];
+
+        return $errors;
     }
 }

@@ -6,7 +6,9 @@ use Illuminate\Contracts\Validation\Rule;
 
 class MaxSelections implements Rule
 {
-    const MAX = 20;
+    const MAX = 2;
+    const CODE = 5;
+
     /**
      * Create a new rule instance.
      *
@@ -36,6 +38,6 @@ class MaxSelections implements Rule
      */
     public function message()
     {
-        return 'Maximum number of selections ' . self::MAX;
+        return ['code' => self::CODE, 'message' => 'Maximum number of selections: ' . self::MAX];
     }
 }

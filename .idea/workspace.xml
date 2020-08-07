@@ -20,11 +20,14 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="3d8623d8-8687-4687-baa5-f04c94607f49" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/app/Http/Controllers/API/BaseController.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/Validator/Validator.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Http/Kernel.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Kernel.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/routes/api.php" beforeDir="false" afterPath="$PROJECT_DIR$/routes/api.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/BetController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/BetController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Rules/DuplicateSelection.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Rules/DuplicateSelections.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Rules/MaxOdds.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Rules/MaxOdds.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Rules/MaxSelections.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Rules/MaxSelections.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Rules/MinOdds.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Rules/MinOdds.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Rules/MinSelections.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Rules/MinSelections.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Validator/Validator.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Validator/Validator.php" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -38,6 +41,7 @@
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
+  <component name="PhpDebugGeneral" listening_started="true" />
   <component name="PhpWorkspaceProjectConfiguration">
     <include_path>
       <path value="$PROJECT_DIR$/vendor/opis/closure" />
@@ -173,7 +177,8 @@
       <workItem from="1596444338741" duration="16768000" />
       <workItem from="1596486203728" duration="7138000" />
       <workItem from="1596531757230" duration="3005000" />
-      <workItem from="1596536778796" duration="5005000" />
+      <workItem from="1596536778796" duration="5634000" />
+      <workItem from="1596736997164" duration="20340000" />
     </task>
     <servers />
   </component>
@@ -191,5 +196,19 @@
       </map>
     </option>
     <option name="oldMeFiltersMigrated" value="true" />
+  </component>
+  <component name="WindowStateProjectService">
+    <state x="2206" y="134" width="700" height="752" key="#PHP" timestamp="1596739613326">
+      <screen x="1920" y="0" width="1280" height="1024" />
+    </state>
+    <state x="2206" y="134" width="700" height="752" key="#PHP/55.27.1865.1053/1920.0.1280.1024@1920.0.1280.1024" timestamp="1596739613326" />
+    <state x="2331" y="0" width="438" height="1024" key="#com.intellij.refactoring.rename.AutomaticRenamingDialog" timestamp="1596751096477">
+      <screen x="1920" y="0" width="1280" height="1024" />
+    </state>
+    <state x="2331" y="0" width="438" height="1024" key="#com.intellij.refactoring.rename.AutomaticRenamingDialog/55.27.1865.1053/1920.0.1280.1024@1920.0.1280.1024" timestamp="1596751096477" />
+    <state x="55" y="27" width="820" height="696" maximized="true" key="dock-window-1" timestamp="1596739344925">
+      <screen x="55" y="27" width="1865" height="1053" />
+    </state>
+    <state x="55" y="27" width="820" height="696" maximized="true" key="dock-window-1/55.27.1865.1053/1920.0.1280.1024@1920.0.1280.1024" timestamp="1596739344925" />
   </component>
 </project>

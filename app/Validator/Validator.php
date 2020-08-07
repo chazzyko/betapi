@@ -4,56 +4,46 @@ namespace App\Validator;
 
 class Validator
 {
-    protected $val = 101;
     protected $errors = [];
+    protected $arrErrors = [];
 
     public function make(array $input = [], array $rules = [])
     {
-        if($input && $rules){
+        if ($input && $rules) {
             foreach ($input as $key => $val) {
-                if(is_array($val) && array_key_exists($key, $rules){
-                    foreach ($rules[$key] as $validationRule){
-
-                    }
-                    $this->errors[$key] = $this->validateArray($val, $rules);
+                if (is_array($val)) {
+                    $this->errors[$key] = $this->validateArrays($val, $rules, $input);
                 }
 
-//                if(array_key_exists($key, $rules)){
-//                    foreach ($rules[$key] as $validationRule) {
-//                        if(! $validationRule->passes($key, $val)){
-//                            if($name){
-//                                $this->errors[$name] = $validationRule->message();
-//                            }else{
-//                                $this->errors[] = $validationRule->message();
-//                            }
-//                        }
-//                    }
-//                }
-
-
-
+                foreach ($rules[$key] as $validationRule) {
+                    if(! $validationRule->passes($key, $val)){
+                        $this->errors['errors'][] = $validationRule->message();
+                    }
+                }
             }
         }
+
+        return $this->errors;
     }
 
-    public function validateArray(array $input, array $rules)
+    public function validateArrays(array $input, array $rules, $parentArray = [])
     {
         if($input && $rules){
             foreach ($input as $key => $val) {
+                if(is_array($val)){
+                    $this->validateArrays($val, $rules, $val);
+                }
+
                 if(array_key_exists($key, $rules)){
                      foreach ($rules[$key] as $validationRule) {
-                         if(! $validationRule->passes($key, $val)){
-                             if($name){
-                                 $this->errors[$name] = $validationRule->message();
-                             }else{
-                                 $this->errors[] = $validationRule->message();
-                             }
+                         if(! $validationRule->passes($key, $val, $input)){
+                             $this->arrErrors[] = $validationRule->message($parentArray);
                          }
                     }
                  }
             }
         }
 
-        return $this->errors;
+        return $this->arrErrors;
     }
 }

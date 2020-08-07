@@ -7,6 +7,7 @@ use Illuminate\Contracts\Validation\Rule;
 class MinSelections implements Rule
 {
     const MIN = 1;
+    const CODE = 4;
     /**
      * Create a new rule instance.
      *
@@ -26,7 +27,7 @@ class MinSelections implements Rule
      */
     public function passes($attribute, $value)
     {
-        return $value > self::MIN;
+        return count($value) >= self::MIN;
     }
 
     /**
@@ -36,6 +37,6 @@ class MinSelections implements Rule
      */
     public function message()
     {
-        return 'Minimum number of selections ' . self::MIN;
+        return ['code' => self::CODE, 'message' => 'Minimum number of selections ' . self::MIN];
     }
 }
