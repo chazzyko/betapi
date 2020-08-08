@@ -5,19 +5,17 @@ namespace App\Validator;
 class Validator
 {
     protected $errors = [];
-    protected $arrErrors = [];
+    protected $localErrors = [];
 
-    public function make(array $input = [], array $rules = [])
+    public function global(array $input = [], array $rules = [])
     {
         if ($input && $rules) {
             foreach ($input as $key => $val) {
-                if (is_array($val)) {
-                    $this->errors[$key] = $this->validateArrays($val, $rules, $input);
-                }
-
-                foreach ($rules[$key] as $validationRule) {
-                    if(! $validationRule->passes($key, $val)){
-                        $this->errors['errors'][] = $validationRule->message();
+                if(array_key_exists($key, $rules)) {
+                    foreach ($rules[$key] as $validationRule) {
+                        if (!$validationRule->passes($key, $val)) {
+                            $this->errors[] = $validationRule->message();
+                        }
                     }
                 }
             }
@@ -26,24 +24,33 @@ class Validator
         return $this->errors;
     }
 
-    public function validateArrays(array $input, array $rules, $parentArray = [])
+    public function local(array $input, array $rules, $parentArray = [])
     {
         if($input && $rules){
             foreach ($input as $key => $val) {
                 if(is_array($val)){
-                    $this->validateArrays($val, $rules, $val);
+                    $this->local($val, $rules, $val);
                 }
 
                 if(array_key_exists($key, $rules)){
                      foreach ($rules[$key] as $validationRule) {
-                         if(! $validationRule->passes($key, $val, $input)){
-                             $this->arrErrors[] = $validationRule->message($parentArray);
+                         if(! $validationRule->passes($key, $val)){
+                             $this->localErrors[] = $validationRule->message($parentArray);
                          }
                     }
                  }
             }
         }
 
-        return $this->arrErrors;
+        return $this->localErrors;
+    }
+
+    public function checkWin(array $input, $validationRule)
+    {
+        if(! $validationRule->passes($key = "",  $input)){
+            return $this->errors = $validationRule->message();
+        }
+
+        return $this->errors;
     }
 }

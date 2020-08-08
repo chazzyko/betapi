@@ -6,6 +6,7 @@ use Illuminate\Contracts\Validation\Rule;
 
 class PrevActionState implements Rule
 {
+    const CODE = 10;
     /**
      * Create a new rule instance.
      *
@@ -35,6 +36,9 @@ class PrevActionState implements Rule
      */
     public function message()
     {
-        return 'The validation error message.';
+        return [
+            'code' => self::CODE,
+            'message' => 'Your previous action is not finished.',
+        ];
     }
 }

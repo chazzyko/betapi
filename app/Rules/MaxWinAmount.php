@@ -6,6 +6,9 @@ use Illuminate\Contracts\Validation\Rule;
 
 class MaxWinAmount implements Rule
 {
+    const MAXWIN = 20000;
+    const CODE = 9;
+
     /**
      * Create a new rule instance.
      *
@@ -19,13 +22,23 @@ class MaxWinAmount implements Rule
     /**
      * Determine if the validation rule passes.
      *
-     * @param  string  $attribute
-     * @param  mixed  $value
+     * @param string $attribute
+     * @param $input
      * @return bool
      */
-    public function passes($attribute, $value)
+    public function passes($attribute, $input)
     {
-        //
+        $amount = 0;
+        if(isset($input['stake_amount']) && isset($input['selections'])){
+            $amount = $input['stake_amount'];
+            foreach ($input['selections'] as $selection) {
+                if(isset($selection['odds'])){
+                    $amount *= $selection['odds'];
+                }
+            }
+        }
+
+        return $amount <= self::MAXWIN;
     }
 
     /**
@@ -35,6 +48,9 @@ class MaxWinAmount implements Rule
      */
     public function message()
     {
-        return 'The validation error message.';
+        return [
+            'code' => self::CODE,
+            'message' => 'Max win amount is ' . self::MAXWIN,
+        ];
     }
 }

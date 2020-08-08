@@ -6,6 +6,7 @@ use Illuminate\Contracts\Validation\Rule;
 
 class Unknown implements Rule
 {
+    const CODE = 0;
     /**
      * Create a new rule instance.
      *
@@ -35,6 +36,9 @@ class Unknown implements Rule
      */
     public function message()
     {
-        return 'The validation error message.';
+        return [
+            'code' => self::CODE,
+            'message' => 'Unknown error.',
+        ];
     }
 }

@@ -4,18 +4,19 @@ namespace App\Rules;
 
 use Illuminate\Contracts\Validation\Rule;
 
-class DuplicateSelections
+class DuplicateSelections implements Rule
 {
     protected $id;
     const CODE = 8;
+    protected $selections = [];
     /**
      * Create a new rule instance.
      *
      * @return void
      */
-    public function __construct()
+    public function __construct(array $selections)
     {
-        //
+        $this->selections = $selections;
     }
 
     /**
@@ -25,17 +26,17 @@ class DuplicateSelections
      * @param  mixed  $value
      * @return bool
      */
-    public function passes($attribute, $value, $selections)
+    public function passes($attribute, $value)
     {
         $count = 0;
         $this->id = $value;
-        foreach ($selections as $selection) {
-            if(isset($selection['id']) && $selection['id'] == $value){
+        foreach ($this->selections as $selection) {
+            if(isset($selection['id']) && $selection['id'] === $value){
                 $count += 1;
             }
         }
 
-        return $count > 1;
+        return $count <= 1;
     }
 
     /**

@@ -8,6 +8,7 @@ use App\Rules\DuplicateSelections;
 use App\Rules\MaxOdds;
 use App\Rules\MaxSelections;
 use App\Rules\MaxStake;
+use App\Rules\MaxWinAmount;
 use App\Rules\MinOdds;
 use App\Rules\MinSelections;
 use App\Rules\MinStake;
@@ -22,18 +23,25 @@ class BetController extends BaseController
         $player = Player::find($request->input('player_id'));
 
         if($player){
-            $rez = $validator->make($request->all(), [
+            $errors['errors'] = $validator->global($request->all(), [
                'player_id' => [new Balance],
                'stake_amount' => [new MinStake, new MaxStake],
                'selections' => [new MinSelections, new MaxSelections],
-                'id' => [new DuplicateSelections],
-               'odds' => [new MinOdds, new MaxOdds ],
             ]);
 
-            if($rez){
-                return response()->json($rez, 200);
+            $errors['errors'][] = $validator->checkWin($request->all(), new MaxWinAmount);
+
+            $errors['selections'] = $validator->local($request->input('selections'), [
+                'id' => [new DuplicateSelections($request->input('selections'))],
+                'odds' => [new MinOdds, new MaxOdds ],
+            ]);
+
+            if($errors){
+                return response()->json($errors, 200);
             }
         }
+
+
 
         return response()->json(['error' => 'Fucka was not found.'], 200);
 
