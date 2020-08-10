@@ -6,36 +6,27 @@ use Illuminate\Contracts\Validation\Rule;
 
 class MaxStake implements Rule
 {
+    const CODE = 3;
     const MAX = 10000;
-    /**
-     * Create a new rule instance.
-     *
-     * @return void
-     */
-    public function __construct()
-    {
-        //
-    }
 
     /**
-     * Determine if the validation rule passes.
-     *
-     * @param  string  $attribute
-     * @param  mixed  $value
+     * @param string $attribute
+     * @param mixed $value
      * @return bool
      */
     public function passes($attribute, $value)
     {
-        return $value <= self::MAX;
+        return $value[$attribute] <= self::MAX;
     }
 
     /**
-     * Get the validation error message.
-     *
-     * @return string
+     * @return array|string
      */
     public function message()
     {
-        return 'Maximum stake amount is ' . self::MAX;
+        return [
+            "code" => self::CODE,
+            "message" => "Maximum stake amount is " . self::MAX
+        ];
     }
 }

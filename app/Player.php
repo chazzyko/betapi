@@ -7,6 +7,6 @@ use Illuminate\Database\Eloquent\Model;
 class Player extends Model
 {
     protected $fillable = [
-        'balance'
+        'player_id', 'balance'
     ];
 }

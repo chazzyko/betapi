@@ -15,6 +15,7 @@ class CreatePlayerTable extends Migration
     {
         Schema::create('players', function (Blueprint $table) {
             $table->id();
+            $table->integer('player_id')->unsigned();
             $table->double('balance', 10, 2)->default(1000);
             $table->timestamps();
         });

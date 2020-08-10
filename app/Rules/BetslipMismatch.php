@@ -4,9 +4,9 @@ namespace App\Rules;
 
 use Illuminate\Contracts\Validation\Rule;
 
-class PrevActionState implements Rule
+class BetslipMismatch implements Rule
 {
-    const CODE = 10;
+    const CODE = 1;
 
     /**
      * @param string $attribute
@@ -15,7 +15,7 @@ class PrevActionState implements Rule
      */
     public function passes($attribute, $value)
     {
-        return false;
+        return (isset($value[$attribute]));
     }
 
     /**
@@ -24,8 +24,8 @@ class PrevActionState implements Rule
     public function message()
     {
         return [
-            'code' => self::CODE,
-            'message' => 'Your previous action is not finished yet.',
+            "code" => self::CODE,
+            "message" => "Betslip mismatch"
         ];
     }
 }

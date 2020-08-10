@@ -7,38 +7,31 @@ use Illuminate\Contracts\Validation\Rule;
 
 class Balance implements Rule
 {
-    /**
-     * Create a new rule instance.
-     *
-     * @return void
-     */
     const CODE = 11;
 
-    public function __construct()
-    {
-        //
-    }
-
     /**
-     * Determine if the validation rule passes.
-     *
-     * @param  string  $attribute
-     * @param  mixed  $value
+     * @param string $attribute
+     * @param mixed $value
      * @return bool
      */
     public function passes($attribute, $value)
     {
-        $player =  Player::find($value);
-        return $player->balance > 10000;
+        $player = Player::lockForUpdate()->where("player_id", $value[$attribute])->first();
+        if (isset($value['stake_amount'])) {
+            return ($player->balance > 0 && $player->balance >= abs((float)$value['stake_amount']));
+        }
+
+        return true;
     }
 
     /**
-     * Get the validation error message.
-     *
-     * @return string
+     * @return array|string
      */
     public function message()
     {
-        return ['code' => self::CODE, 'message' =>'Insufficient funds.'];
+        return [
+            'code' => self::CODE,
+            'message' => 'Insufficient balance.'
+        ];
     }
 }

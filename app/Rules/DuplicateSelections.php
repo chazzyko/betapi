@@ -6,32 +6,18 @@ use Illuminate\Contracts\Validation\Rule;
 
 class DuplicateSelections implements Rule
 {
-    protected $id;
     const CODE = 8;
-    protected $selections = [];
-    /**
-     * Create a new rule instance.
-     *
-     * @return void
-     */
-    public function __construct(array $selections)
-    {
-        $this->selections = $selections;
-    }
 
     /**
-     * Determine if the validation rule passes.
-     *
-     * @param  string  $attribute
-     * @param  mixed  $value
+     * @param string $selections
+     * @param mixed $val
      * @return bool
      */
-    public function passes($attribute, $value)
+    public function passes($selections, $val)
     {
         $count = 0;
-        $this->id = $value;
-        foreach ($this->selections as $selection) {
-            if(isset($selection['id']) && $selection['id'] === $value){
+        foreach ($selections as $selection) {
+            if ($selection['id'] === $val) {
                 $count += 1;
             }
         }
@@ -40,18 +26,13 @@ class DuplicateSelections implements Rule
     }
 
     /**
-     * Get the validation error message.
-     *
-     * @return array
+     * @return array|string
      */
     public function message()
     {
         return [
-            'id' => $this->id,
-            'errors' => [
-                'code' => self::CODE,
-                'message' => 'Duplicate selection found.',
-            ]
+            'code' => self::CODE,
+            'message' => 'Duplicate selection found.',
         ];
     }
 }

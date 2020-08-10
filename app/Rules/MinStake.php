@@ -6,27 +6,17 @@ use Illuminate\Contracts\Validation\Rule;
 
 class MinStake implements Rule
 {
-    const MIN = 100;
-    /**
-     * Create a new rule instance.
-     *
-     * @return void
-     */
-    public function __construct()
-    {
-        //
-    }
+    const MIN = 0.3;
+    const CODE = 2;
 
     /**
-     * Determine if the validation rule passes.
-     *
-     * @param  string  $attribute
-     * @param  mixed  $value
+     * @param string $attribute
+     * @param mixed $value
      * @return bool
      */
     public function passes($attribute, $value)
     {
-        return $value >= self::MIN;
+        return $value[$attribute] >= self::MIN;
     }
 
     /**
@@ -34,6 +24,9 @@ class MinStake implements Rule
      */
     public function message()
     {
-        return ['code' => 2, 'message' => 'Minimum stake amount is ' . self::MIN];
+        return [
+            "code" => self::CODE,
+            'message' => "Minimum stake amount is " . self::MIN
+        ];
     }
 }

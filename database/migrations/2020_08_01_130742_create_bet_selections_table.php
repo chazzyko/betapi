@@ -20,8 +20,8 @@ class CreateBetSelectionsTable extends Migration
                 ->references('id')
                 ->on('bets')
                 ->onDelete('cascade');
-            $table->bigInteger('stake_id');
-            $table->double('odds', 5, 3);
+            $table->bigInteger('selection_id');
+            $table->double('odds', 10, 3);
         });
     }
 

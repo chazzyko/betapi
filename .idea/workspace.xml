@@ -21,12 +21,27 @@
   <component name="ChangeListManager">
     <list default="true" id="3d8623d8-8687-4687-baa5-f04c94607f49" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/BalanceTransaction.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/BalanceTransaction.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/BetSelection.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/BetSelection.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/Http/Controllers/BetController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/BetController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Player.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Player.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Rules/Balance.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Rules/Balance.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Rules/BetslipMishmatch.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Rules/BetslipMismatch.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/Rules/DuplicateSelections.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Rules/DuplicateSelections.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Rules/MaxOdds.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Rules/MaxOdds.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Rules/MaxSelections.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Rules/MaxSelections.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Rules/MaxStake.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Rules/MaxStake.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/Rules/MaxWinAmount.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Rules/MaxWinAmount.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Rules/MinOdds.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Rules/MinOdds.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Rules/MinSelections.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Rules/MinSelections.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Rules/MinStake.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Rules/MinStake.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/Rules/PrevActionState.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Rules/PrevActionState.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/Rules/Unknown.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Rules/Unknown.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/Validator/Validator.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Validator/Validator.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/database/migrations/2020_08_01_130506_create_player_table.php" beforeDir="false" afterPath="$PROJECT_DIR$/database/migrations/2020_08_01_130506_create_player_table.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/database/migrations/2020_08_01_130742_create_bet_selections_table.php" beforeDir="false" afterPath="$PROJECT_DIR$/database/migrations/2020_08_01_130742_create_bet_selections_table.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/database/migrations/2020_08_03_085039_create_players_table.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/database/migrations/2020_08_03_085130_create_balance_transactions_table.php" beforeDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -179,6 +194,8 @@
       <workItem from="1596536778796" duration="5634000" />
       <workItem from="1596736997164" duration="21597000" />
       <workItem from="1596800075075" duration="9832000" />
+      <workItem from="1597000330998" duration="5701000" />
+      <workItem from="1597053077973" duration="26046000" />
     </task>
     <servers />
   </component>
@@ -202,10 +219,15 @@
       <screen x="1920" y="0" width="1280" height="1024" />
     </state>
     <state x="2206" y="134" width="700" height="752" key="#PHP/55.27.1865.1053/1920.0.1280.1024@1920.0.1280.1024" timestamp="1596739613326" />
-    <state x="2331" y="0" width="438" height="1024" key="#com.intellij.refactoring.rename.AutomaticRenamingDialog" timestamp="1596751096477">
-      <screen x="1920" y="0" width="1280" height="1024" />
+    <state x="654" y="27" width="438" height="1024" key="#com.intellij.refactoring.rename.AutomaticRenamingDialog" timestamp="1597000787228">
+      <screen x="55" y="27" width="1865" height="1053" />
     </state>
     <state x="2331" y="0" width="438" height="1024" key="#com.intellij.refactoring.rename.AutomaticRenamingDialog/55.27.1865.1053/1920.0.1280.1024@1920.0.1280.1024" timestamp="1596751096477" />
+    <state x="654" y="27" key="#com.intellij.refactoring.rename.AutomaticRenamingDialog/55.27.1865.1053/1920.0.1280.1024@55.27.1865.1053" timestamp="1597000787228" />
+    <state x="720" y="310" width="524" height="484" key="#com.jetbrains.php.actions.copyPaste.importReferences.PhpImportReferencesDialog" timestamp="1597063663510">
+      <screen x="55" y="27" width="1865" height="1053" />
+    </state>
+    <state x="720" y="310" width="524" height="484" key="#com.jetbrains.php.actions.copyPaste.importReferences.PhpImportReferencesDialog/55.27.1865.1053/1920.0.1280.1024@55.27.1865.1053" timestamp="1597063663510" />
     <state x="55" y="27" width="820" height="696" key="dock-window-1" timestamp="1596759319335">
       <screen x="55" y="27" width="1865" height="1053" />
     </state>

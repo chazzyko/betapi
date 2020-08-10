@@ -6,24 +6,12 @@ use Illuminate\Contracts\Validation\Rule;
 
 class MaxSelections implements Rule
 {
-    const MAX = 2;
+    const MAX = 20;
     const CODE = 5;
 
     /**
-     * Create a new rule instance.
-     *
-     * @return void
-     */
-    public function __construct()
-    {
-        //
-    }
-
-    /**
-     * Determine if the validation rule passes.
-     *
-     * @param  string  $attribute
-     * @param  mixed  $value
+     * @param string $attribute
+     * @param mixed $value
      * @return bool
      */
     public function passes($attribute, $value)
@@ -32,12 +20,13 @@ class MaxSelections implements Rule
     }
 
     /**
-     * Get the validation error message.
-     *
-     * @return string
+     * @return array|string
      */
     public function message()
     {
-        return ['code' => self::CODE, 'message' => 'Maximum number of selections: ' . self::MAX];
+        return [
+            'code' => self::CODE,
+            'message' => 'Maximum number of selections: ' . self::MAX
+        ];
     }
 }

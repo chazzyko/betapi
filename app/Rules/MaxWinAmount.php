@@ -10,29 +10,17 @@ class MaxWinAmount implements Rule
     const CODE = 9;
 
     /**
-     * Create a new rule instance.
-     *
-     * @return void
-     */
-    public function __construct()
-    {
-        //
-    }
-
-    /**
-     * Determine if the validation rule passes.
-     *
      * @param string $attribute
-     * @param $input
+     * @param mixed $input
      * @return bool
      */
     public function passes($attribute, $input)
     {
         $amount = 0;
-        if(isset($input['stake_amount']) && isset($input['selections'])){
+        if (isset($input['stake_amount']) && isset($input['selections'])) {
             $amount = $input['stake_amount'];
             foreach ($input['selections'] as $selection) {
-                if(isset($selection['odds'])){
+                if (isset($selection['odds'])) {
                     $amount *= $selection['odds'];
                 }
             }
@@ -42,9 +30,7 @@ class MaxWinAmount implements Rule
     }
 
     /**
-     * Get the validation error message.
-     *
-     * @return string
+     * @return array|string
      */
     public function message()
     {
