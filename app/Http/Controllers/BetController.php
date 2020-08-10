@@ -20,10 +20,9 @@ use App\Rules\DuplicateSelections;
 use App\Rules\Unknown;
 use App\Validator\Validator;
 use Illuminate\Http\Request;
-use App\Http\Controllers\API\BaseController;
 use Illuminate\Support\Facades\DB;
 
-class BetController extends BaseController
+class BetController extends Controller
 {
     public function store(Request $request, Validator $validator)
     {

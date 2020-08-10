@@ -21,27 +21,12 @@
   <component name="ChangeListManager">
     <list default="true" id="3d8623d8-8687-4687-baa5-f04c94607f49" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/BalanceTransaction.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/BalanceTransaction.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/BetSelection.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/BetSelection.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/API/BaseController.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/BalanceTransactionController.php" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/app/Http/Controllers/BetController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/BetController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Player.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Player.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Rules/Balance.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Rules/Balance.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Rules/BetslipMishmatch.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Rules/BetslipMismatch.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Rules/DuplicateSelections.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Rules/DuplicateSelections.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Rules/MaxOdds.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Rules/MaxOdds.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Rules/MaxSelections.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Rules/MaxSelections.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Rules/MaxStake.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Rules/MaxStake.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Rules/MaxWinAmount.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Rules/MaxWinAmount.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Rules/MinOdds.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Rules/MinOdds.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Rules/MinSelections.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Rules/MinSelections.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Rules/MinStake.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Rules/MinStake.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Rules/PrevActionState.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Rules/PrevActionState.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Rules/Unknown.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Rules/Unknown.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Validator/Validator.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Validator/Validator.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/database/migrations/2020_08_01_130506_create_player_table.php" beforeDir="false" afterPath="$PROJECT_DIR$/database/migrations/2020_08_01_130506_create_player_table.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/database/migrations/2020_08_01_130742_create_bet_selections_table.php" beforeDir="false" afterPath="$PROJECT_DIR$/database/migrations/2020_08_01_130742_create_bet_selections_table.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/database/migrations/2020_08_03_085039_create_players_table.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/database/migrations/2020_08_03_085130_create_balance_transactions_table.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/BetSelection.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/PlayerController.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/database/migrations/2020_08_01_130659_create_player_balance_transactions_table.php" beforeDir="false" afterPath="$PROJECT_DIR$/database/migrations/2020_08_01_130659_create_player_balance_transactions_table.php" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -195,7 +180,7 @@
       <workItem from="1596736997164" duration="21597000" />
       <workItem from="1596800075075" duration="9832000" />
       <workItem from="1597000330998" duration="5701000" />
-      <workItem from="1597053077973" duration="26046000" />
+      <workItem from="1597053077973" duration="26450000" />
     </task>
     <servers />
   </component>

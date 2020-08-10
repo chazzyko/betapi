@@ -20,8 +20,8 @@ class CreatePlayerBalanceTransactionsTable extends Migration
                 ->references('id')
                 ->on('players')
                 ->onDelete('cascade');
-            $table->double('amount', 10,2);
-            $table->double('amount_before', 10,2);
+            $table->double('amount', 10, 2);
+            $table->double('amount_before', 10, 2);
             $table->timestamps();
         });
     }
