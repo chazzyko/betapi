@@ -1,3 +1,17 @@
+# Application endpoint:
+/api/bet
+
+# Application main controller:
+betapi/app/Http/Controllers/BetController.php
+
+# Endpoint validator:
+betapi/app/Validator/Validator.php
+
+# Validator rules:
+betapi/app/Rules/
+ 
+
+
 <p align="center"><img src="https://res.cloudinary.com/dtfbvvkyp/image/upload/v1566331377/laravel-logolockup-cmyk-red.svg" width="400"></p>
 
 <p align="center">
