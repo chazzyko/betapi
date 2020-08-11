@@ -9,6 +9,10 @@ betapi/app/Validator/Validator.php
 
 # Validator rules:
 betapi/app/Rules/
+
+# Application DB schema files:
+betapi/database/migrations/
+
  
 
 
